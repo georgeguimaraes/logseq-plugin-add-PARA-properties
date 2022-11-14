@@ -1,16 +1,15 @@
 import "@logseq/libs";
 async function add_para_properties(property: string) {
-  const page = logseq.Editor.getCurrentPage() as PageEntity;
-  const blocks = logseq.Editor.getCurrentPageBlocksTree();
+  const page = await logseq.Editor.getCurrentPage() as PageEntity;
+  const blocks = await logseq.Editor.getCurrentPageBlocksTree();
   const first_block = blocks[0];
-  const p = property;
-  console.log(page);
-  console.log(p);
 
   if (page.properties) {
-    await logseq.Editor.upsertBlockProperty(first_block.uuid, p, "");
+    await logseq.Editor.upsertBlockProperty(first_block.uuid, property, "");
   } else {
-    await logseq.Editor.insertBlock(first_block.uuid, "", { before: true, properties: { p: ""}});
+    var properties_obj = {};
+    properties_obj[property] = "";
+    await logseq.Editor.insertBlock(first_block.uuid, "", { sibling: true, before: true, properties: properties_obj });
   }
 }
 
