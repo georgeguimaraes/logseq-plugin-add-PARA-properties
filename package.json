@@ -3,7 +3,6 @@
   "name": "logseq-plugin-add-PARA-properties",
   "version": "0.0.1",
   "description": "Add some page properties that makes sense to my way of doing PARA in Logseq",
-  "main": "dist/index.html",
   "author": "George Guimarães",
   "license": "MIT",
   "logseq": {
