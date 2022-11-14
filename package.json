@@ -17,20 +17,25 @@
     "build": "parcel build --public-url . --no-source-maps index.html"
   },
   "release": {
-    "branches": ["main"],
+    "branches": [
+      "main"
+    ],
     "plugins": [
-      ["@semantic-release/github", {
-        "assets": ["logseq-plugin-add-PARA-properties.zip"]
-      }]
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            "logseq-plugin-add-PARA-properties.zip"
+          ]
+        }
+      ]
     ]
   },
   "devDependencies": {
-    "parcel": "2.0.0-beta.2",
-    "semantic-release": "^17.4.7",
-    "typescript": "^4.4.3"
-
-},
+    "parcel": "^2.8.0",
+    "typescript": "^4.8.4"
+  },
   "dependencies": {
-    "@logseq/libs": "^0.0.1-alpha.22"
+    "@logseq/libs": "^0.0.10"
   }
 }
