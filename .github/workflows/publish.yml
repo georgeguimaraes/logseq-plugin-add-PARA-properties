@@ -1,0 +1,26 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - "main"
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+      - run: npm ci
+      - run: npm run build
+      - uses: montudor/action-zip@v1
+        with:
+          args: zip -qq -r logseq-plugin-merge-nested-blocks-into-one.zip dist README.md package.json LICENSE icon.png demo.gif
+      - name: Release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

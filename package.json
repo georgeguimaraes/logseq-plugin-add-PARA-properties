@@ -1,0 +1,36 @@
+{
+  "private": true,
+  "name": "logseq-plugin-add-PARA-properties",
+  "version": "0.0.1",
+  "description": "Add some page properties that makes sense to my way of doing PARA in Logseq",
+  "main": "dist/index.html",
+  "author": "George Guimarães",
+  "license": "MIT",
+  "logseq": {
+    "id": "logseq-plugin-add-PARA-properties",
+    "title": "Add PARA Properties to Pages",
+    "icon": "icon.png",
+    "repository": "https://github.com/georgeguimaraes/logseq-plugin-add-PARA-properties"
+  },
+  "scripts": {
+    "dev": "parcel ./index.html --public-url ./",
+    "build": "parcel build --public-url . --no-source-maps index.html"
+  },
+  "release": {
+    "branches": ["main"],
+    "plugins": [
+      ["@semantic-release/github", {
+        "assets": ["logseq-plugin-add-PARA-properties.zip"]
+      }]
+    ]
+  },
+  "devDependencies": {
+    "parcel": "2.0.0-beta.2",
+    "semantic-release": "^17.4.7",
+    "typescript": "^4.4.3"
+
+},
+  "dependencies": {
+    "@logseq/libs": "^0.0.1-alpha.22"
+  }
+}
