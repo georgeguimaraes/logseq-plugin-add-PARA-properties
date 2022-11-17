@@ -2,6 +2,10 @@
   "private": true,
   "name": "logseq-plugin-add-PARA-properties",
   "version": "0.0.1",
+  "main": "dist/index.html",
+  "targets": {
+    "main": false
+  },
   "description": "Add some page properties that makes sense to my way of doing PARA in Logseq",
   "author": "George Guimarães",
   "license": "MIT",
