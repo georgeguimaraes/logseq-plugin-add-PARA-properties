@@ -1,23 +1,22 @@
 {
   "private": true,
-  "name": "logseq-plugin-add-PARA-properties",
+  "name": "logseq-plugin-add-para-properties",
   "version": "0.0.1",
-  "main": "dist/index.html",
-  "targets": {
-    "main": false
-  },
-  "description": "Add some page properties that makes sense to my way of doing PARA in Logseq",
+  "type": "module",
+  "description": "Add PARA Properties to Pages. Makes it easy to link pages to existing Projects, Areas or Resources.",
   "author": "George Guimarães",
   "license": "MIT",
   "logseq": {
-    "id": "logseq-plugin-add-PARA-properties",
+    "id": "logseq-plugin-add-para-properties",
     "title": "Add PARA Properties to Pages",
-    "icon": "icon.png",
+    "icon": "./icon.png",
+    "main": "./dist/index.html",
     "repository": "https://github.com/georgeguimaraes/logseq-plugin-add-PARA-properties"
   },
   "scripts": {
-    "dev": "parcel ./index.html --public-url ./",
-    "build": "parcel build --public-url . --no-source-maps index.html"
+    "dev": "npx vite",
+    "build": "npx tsc && npx vite build",
+    "preview": "npx vite preview"
   },
   "release": {
     "branches": [
@@ -28,17 +27,18 @@
         "@semantic-release/github",
         {
           "assets": [
-            "logseq-plugin-add-PARA-properties.zip"
+            "logseq-plugin-add-para-properties.zip"
           ]
         }
       ]
     ]
   },
   "devDependencies": {
-    "parcel": "^2.8.0",
-    "typescript": "^4.8.4"
+    "vite-plugin-logseq": "^1.1.2",
+    "@logseq/libs": "^0.0.15",
+    "typescript": "^5.1.3"
   },
   "dependencies": {
-    "@logseq/libs": "^0.0.10"
+    "vite": "^4.3.9"
   }
 }
