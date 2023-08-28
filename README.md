@@ -1,5 +1,7 @@
 # Add PARA properties
 
+Check out the [PARA Method by Tiago Forte himself.](https://fortelabs.co/blog/para/)
+
 I wanted a quick way to link the current page to a Project, Area or Resource that I already have in Logseq.
 
 That's why I created this plugin.
