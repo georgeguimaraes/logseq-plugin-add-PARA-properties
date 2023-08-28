@@ -6,16 +6,24 @@ async function add_para_properties(property: string) {
   const blocks = await logseq.Editor.getCurrentPageBlocksTree();
   const first_block = blocks[0];
 
-  if (page.properties) {
-    await logseq.Editor.upsertBlockProperty(first_block.uuid, property, "");
-  } else {
-    const properties_obj: { [key: string]: any } = {};
-    properties_obj[property] = "";
+  const isEmpty =
+    page.properties === undefined || Object.keys(page.properties).length === 0;
+
+  console.log("properties:", page.properties);
+  if (isEmpty) {
+    const properties: Record<string, any> = {};
+    properties[property] = "";
+
     await logseq.Editor.insertBlock(first_block.uuid, "", {
+      properties: properties,
       sibling: true,
       before: true,
-      properties: properties_obj,
+      focus: true,
+      isPageBlock: true,
     });
+  } else {
+    await logseq.Editor.upsertBlockProperty(first_block.uuid, property, "");
+    await logseq.Editor.editBlock(first_block.uuid);
   }
 }
 
