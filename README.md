@@ -6,7 +6,7 @@ That's why I created this plugin.
 
 ## Usage
 
-This plugin gives you 3 new slashes commands:
+This plugin gives you new slashes commands:
 
 - Project [file page under a project]
 - Area [file page under an area]
@@ -21,6 +21,12 @@ For each Project, Area or Resource, I use the following property:
 ```
   page-type: project # or `area`, `resource`
 ```
+
+You can also use these slashes commands to setup the page-type property:
+
+- Make this page a Project [using page-type]
+- Make this page an Area [using page-type]
+- Make this page a Resource [using page-type]
 
 This is my workflow. I use those properties to query for pages related to projects, areas and resources.
 

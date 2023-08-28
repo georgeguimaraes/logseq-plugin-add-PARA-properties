@@ -1,7 +1,7 @@
 import "@logseq/libs";
 import { PageEntity } from "@logseq/libs/dist/LSPlugin.user";
 
-async function add_para_properties(property: string) {
+async function add_property_to_page(name: string, value: string) {
   const page = (await logseq.Editor.getCurrentPage()) as PageEntity;
   const blocks = await logseq.Editor.getCurrentPageBlocksTree();
   const first_block = blocks[0];
@@ -9,10 +9,9 @@ async function add_para_properties(property: string) {
   const isEmpty =
     page.properties === undefined || Object.keys(page.properties).length === 0;
 
-  console.log("properties:", page.properties);
   if (isEmpty) {
     const properties: Record<string, any> = {};
-    properties[property] = "";
+    properties[name] = value;
 
     await logseq.Editor.insertBlock(first_block.uuid, "", {
       properties: properties,
@@ -22,29 +21,55 @@ async function add_para_properties(property: string) {
       isPageBlock: true,
     });
   } else {
-    await logseq.Editor.upsertBlockProperty(first_block.uuid, property, "");
+    await logseq.Editor.upsertBlockProperty(first_block.uuid, name, value);
     await logseq.Editor.editBlock(first_block.uuid);
   }
+}
+
+async function file_page_under_para(property: string) {
+  await add_property_to_page(property, "");
+}
+
+async function configure_page_type(type: string) {
+  await add_property_to_page("page-type", type);
 }
 
 logseq
   .ready(() => {
     logseq.Editor.registerSlashCommand(
-      "Project [file page under a project]",
+      "Project [file this page under a project]",
       async (_) => {
-        add_para_properties("project");
+        file_page_under_para("project");
       }
     );
     logseq.Editor.registerSlashCommand(
-      "Area [file page under an area]",
+      "Area [file this page under an area]",
       async (_) => {
-        add_para_properties("area");
+        file_page_under_para("area");
       }
     );
     logseq.Editor.registerSlashCommand(
-      "Resource [file page under a resource]",
+      "Resource [file this page under a resource]",
       async (_) => {
-        add_para_properties("resource");
+        file_page_under_para("resource");
+      }
+    );
+    logseq.Editor.registerSlashCommand(
+      "Make this page a Project [using page-type]",
+      async (_) => {
+        configure_page_type("project");
+      }
+    );
+    logseq.Editor.registerSlashCommand(
+      "Make this page an Area [using page-type]",
+      async (_) => {
+        configure_page_type("area");
+      }
+    );
+    logseq.Editor.registerSlashCommand(
+      "Make this page a Resource [using page-type]",
+      async (_) => {
+        configure_page_type("resource");
       }
     );
   })
