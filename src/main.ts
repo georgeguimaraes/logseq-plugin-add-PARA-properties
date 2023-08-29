@@ -1,5 +1,6 @@
 import "@logseq/libs";
 import { PageEntity } from "@logseq/libs/dist/LSPlugin.user";
+import para_template from "./para_template";
 
 async function add_property_to_page(name: string, value: string) {
   const page = (await logseq.Editor.getCurrentPage()) as PageEntity;
@@ -64,6 +65,29 @@ function openAddParaPropertiesMenuBar(e) {
   });
 }
 
+function createBlocksFromTemplate() {
+  return para_template;
+}
+
+async function createParaRootPage() {
+  const title = "PARA";
+  const obj = (await logseq.Editor.getPage(title)) as PageEntity | null;
+  if (obj === null) {
+    const page = await logseq.Editor.createPage(
+      title,
+      {},
+      {
+        createFirstBlock: false,
+        redirect: true,
+      }
+    );
+    await logseq.Editor.insertBatchBlock(page.uuid, createBlocksFromTemplate());
+  } else {
+    logseq.Editor.openInRightSidebar(title);
+    logseq.UI.showMsg("A page called 'PARA' already exists.", "warning");
+  }
+}
+
 logseq
   .ready(() => {
     logseq.Editor.registerSlashCommand(
@@ -106,6 +130,7 @@ logseq
     logseq.provideModel({
       createParaRootPage: () => {
         console.log("createParaRootPage");
+        createParaRootPage();
       },
       openAddParaPropertiesMenuBar: (e) => {
         console.log("openAddParaPropertiesMenuBar");
@@ -119,8 +144,8 @@ logseq
                 <button
                 class="button" id="add-para-properties"
                 data-on-click="openAddParaPropertiesMenuBar" data-rect>
-                    <span id="add-para-properties-icon">
-                        P
+                    <span id="add-para-properties-icon" style="font-size: 10px">
+                        PARA
                     </span>
                 </button>
             `,
