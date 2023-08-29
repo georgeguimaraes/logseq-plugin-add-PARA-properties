@@ -32,9 +32,17 @@ You can also use these slashes commands to setup the page-type property:
 
 This is my workflow. I use those properties to query for pages related to projects, areas and resources.
 
+### PARA Root Page
+
+You can create a page that lists all your Projects, Areas, Resources and Archives using the menu bar:
+
+![menu bar](./demo/menu.png)
+![PARA Root page](./demo/para-root.png)
+
 ## Demo
 
-![demo](./demo.gif)
+![demo 1](./demo/demo1.gif)
+![demo 2](./demo/demo2.gif)
 
 ## Recommendations
 
