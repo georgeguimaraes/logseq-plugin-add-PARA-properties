@@ -34,6 +34,36 @@ async function configure_page_type(type: string) {
   await add_property_to_page("page-type", type);
 }
 
+function openAddParaPropertiesMenuBar(e) {
+  const { rect } = e;
+  const template = `
+    <div id="addParaPropertiesMenu" class="hidden-picker">
+      <span><button data-on-click="createParaRootPage">Create PARA Root Page</button></span>
+    </div>
+    `;
+
+  logseq.provideStyle(`
+    #addParaPropertiesMenu {
+      font-family: Roboto, sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 8px 0;
+      border-radius: 6px;
+    }
+  `);
+
+  logseq.provideUI({
+    key: "add-para-properties-menu",
+    template: template,
+    close: "outside",
+    style: {
+      width: "200px",
+      top: `${rect.top + 40}px`,
+      left: `${rect.right - 100}px`,
+    },
+  });
+}
+
 logseq
   .ready(() => {
     logseq.Editor.registerSlashCommand(
@@ -72,5 +102,28 @@ logseq
         configure_page_type("resource");
       }
     );
+
+    logseq.provideModel({
+      createParaRootPage: () => {
+        console.log("createParaRootPage");
+      },
+      openAddParaPropertiesMenuBar: (e) => {
+        console.log("openAddParaPropertiesMenuBar");
+        openAddParaPropertiesMenuBar(e);
+      },
+    });
+
+    logseq.App.registerUIItem("toolbar", {
+      key: "add-para-properties",
+      template: `
+                <button
+                class="button" id="add-para-properties"
+                data-on-click="openAddParaPropertiesMenuBar" data-rect>
+                    <span id="add-para-properties-icon">
+                        P
+                    </span>
+                </button>
+            `,
+    });
   })
   .catch(console.error);
