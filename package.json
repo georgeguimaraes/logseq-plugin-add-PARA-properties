@@ -2,12 +2,12 @@
   "private": true,
   "name": "logseq-plugin-add-para-properties",
   "version": "0.0.1",
-  "description": "Add PARA Properties to Pages. Makes it easy to link pages to existing Projects, Areas or Resources.",
+  "description": "Easily add PARA into your Logseq workflow.",
   "author": "George Guimarães",
   "license": "MIT",
   "logseq": {
     "id": "logseq-plugin-add-para-properties",
-    "title": "Add PARA Properties to Pages",
+    "title": "Add PARA Properties",
     "icon": "./icon.png",
     "main": "./dist/index.html",
     "repository": "https://github.com/georgeguimaraes/logseq-plugin-add-PARA-properties"
