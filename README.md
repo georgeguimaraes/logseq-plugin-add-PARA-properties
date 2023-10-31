@@ -1,4 +1,4 @@
-# Logseq Plugin: PARA Method Properties
+# Logseq Plugin: Add PARA Properties
 
 Enhance your Logseq experience with this plugin that streamlines the implementation of the PARA Method by Tiago Forte. Organize your work, knowledge, and projects effortlessly by adding custom slash commands to your Logseq environment. 
 
