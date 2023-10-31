@@ -1,4 +1,4 @@
-# Add PARA properties
+# [Logseq Plugin] Add PARA properties
 
 Check out the [PARA Method by Tiago Forte himself.](https://fortelabs.co/blog/para/)
 
