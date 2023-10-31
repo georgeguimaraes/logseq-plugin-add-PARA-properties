@@ -8,10 +8,9 @@ If you find this project valuable, please consider [starring it on GitHub](https
 
 To add the "PARA Method Properties" plugin to your Logseq app, follow these steps:
 
-1. Open your Logseq app.
-2. In the left sidebar, click on the "Marketplace" icon.
-3. In the search bar, type "Add PARA Properties" and press Enter.
-4. Find the plugin in the search results and click "Install" to add it to your Logseq setup.
+1. Open your Logseq app and go to the Plugin Marketplace.
+2. In the search bar, type "Add PARA Properties" and press Enter.
+3. Find the plugin in the search results and click "Install" to add it to your Logseq setup.
 
 ## About
 
