@@ -43,7 +43,8 @@ By adopting these properties, you can easily categorize your content and efficie
 
 Create a central hub for your Projects, Areas, Resources, and Archives by utilizing the menu bar. This central hub provides a quick overview of your PARA-structured content, making navigation and organization straightforward.
 
-![PARA Root Page in the Menu Bar](menu-bar-para-root-page.png)
+![menu bar](./demo/menu.png)
+![PARA Root page](./demo/para-root.png)
 
 ## Demo
 
