@@ -1,49 +1,63 @@
-# [Logseq Plugin] Add PARA properties
+# Logseq Plugin: PARA Method Properties
 
-Check out the [PARA Method by Tiago Forte himself.](https://fortelabs.co/blog/para/)
+Enhance your Logseq experience with this plugin that streamlines the implementation of the PARA Method by Tiago Forte. Organize your work, knowledge, and projects effortlessly by adding custom slash commands to your Logseq environment. 
 
-I wanted a quick way to link the current page to a Project, Area or Resource that I already have in Logseq.
+If you find this project valuable, please consider [starring it on GitHub](https://github.com/georgeguimaraes/logseq-plugin-add-PARA-properties).
 
-That's why I created this plugin.
+## Installation
+
+To add the "PARA Method Properties" plugin to your Logseq app, follow these steps:
+
+1. Open your Logseq app.
+2. In the left sidebar, click on the "Marketplace" icon.
+3. In the search bar, type "Add PARA Properties" and press Enter.
+4. Find the plugin in the search results and click "Install" to add it to your Logseq setup.
+
+## About
+
+The PARA Method, pioneered by Tiago Forte, is a powerful framework for structuring your digital life. This plugin is designed to make Logseq a more suitable tool for applying the PARA Method.
+
+Our goal is to provide an efficient way to associate your current Logseq page with Projects, Areas, or Resources, ensuring that your knowledge management system aligns seamlessly with the PARA Method principles.
 
 ## Usage
 
-This plugin gives you new slashes commands:
+This Logseq plugin introduces a set of slash commands that streamline the categorization of your content:
 
-- Project [file page under a project]
-- Area [file page under an area]
-- Resource [file page under a resource]
+- **Project**: Associates the current page with a project.
+- **Area**: Associates the current page with an area.
+- **Resource**: Associates the current page with a resource.
 
-Each will create a new property (`project::`, `area::` or `resource::`) into the current page. I use it to link to an existing (or new page) using `[[ New Page ]]`. This way the link is clickable.
+Each command creates a corresponding property (e.g., `project::`, `area::`, or `resource::`) on the current page. This property allows you to link to an existing or new page. I recommend using the syntax `[[Renovation Project]]` to be able to click the link.
 
-### Setup for Projects, Areas and Resources pages
+## Setup for Projects, Areas, and Resources
 
-For each Project, Area or Resource, I use the following property:
+To categorize your pages under Projects, Areas, or Resources, we recommend using a `page-type` property. You can set this property manually, or use the following slash commands for a more streamlined setup:
 
-```
-  page-type: project # or `area`, `resource`
-```
+- **Make this page a Project [using page-type]**
+- **Make this page an Area [using page-type]**
+- **Make this page a Resource [using page-type]**
 
-You can also use these slashes commands to setup the page-type property:
+By adopting these properties, you can easily categorize your content and efficiently query for pages related to your projects, areas, and resources.
 
-- Make this page a Project [using page-type]
-- Make this page an Area [using page-type]
-- Make this page a Resource [using page-type]
+## PARA Root Page
 
-This is my workflow. I use those properties to query for pages related to projects, areas and resources.
+Create a central hub for your Projects, Areas, Resources, and Archives by utilizing the menu bar. This central hub provides a quick overview of your PARA-structured content, making navigation and organization straightforward.
 
-### PARA Root Page
-
-You can create a page that lists all your Projects, Areas, Resources and Archives using the menu bar:
-
-![menu bar](./demo/menu.png)
-![PARA Root page](./demo/para-root.png)
+![PARA Root Page in the Menu Bar](menu-bar-para-root-page.png)
 
 ## Demo
+
+Visual demonstrations of how this plugin enhances your Logseq experience:
 
 ![demo 1](./demo/demo1.gif)
 ![demo 2](./demo/demo2.gif)
 
 ## Recommendations
 
-I also use [Awesome Props](https://github.com/yoyurec/logseq-awesome-props) to have some cool icons for properties in all pages.
+For a visually pleasing and informative experience, consider integrating the [Awesome Props](https://github.com/yoyurec/logseq-awesome-props) plugin. This extension allows you to add appealing icons to your properties across all pages, making your Logseq workspace more visually engaging.
+
+Feel free to reach out if you have any questions or feedback. I hope you find this plugin useful in optimizing your use of Logseq and the PARA Method. Enjoy!
+
+---
+
+**Note:** Be sure to check out the original [PARA Method by Tiago Forte](https://www.tiagoforte.com/para) to dive deeper into the principles and concepts behind this organization system.
