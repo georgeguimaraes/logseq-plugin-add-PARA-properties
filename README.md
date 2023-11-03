@@ -1,6 +1,6 @@
 # Logseq Plugin: Add PARA Properties
 
-Enhance your Logseq experience with this plugin that streamlines the implementation of the [PARA Method by Tiago Forte](https://www.tiagoforte.com/para). Organize your work, knowledge, and projects effortlessly by adding custom slash commands to your Logseq environment. 
+Enhance your Logseq experience with this plugin that streamlines the implementation of the [PARA Method by Tiago Forte](https://www.tiagoforte.com/para). Organize your work, knowledge, and projects effortlessly by adding custom slash commands to your Logseq environment.
 
 If you find this project valuable, please consider [starring it on GitHub](https://github.com/georgeguimaraes/logseq-plugin-add-PARA-properties).
 
@@ -22,9 +22,9 @@ Our goal is to provide an efficient way to associate your current Logseq page wi
 
 This Logseq plugin introduces a set of slash commands that streamline the categorization of your content:
 
-- **Project**: Associates the current page with a project.
-- **Area**: Associates the current page with an area.
-- **Resource**: Associates the current page with a resource.
+- **Project \[file this page under a project\]**: Associates the current page with a project.
+- **Area \[file this page under an area\]**: Associates the current page with an area.
+- **Resource \[file this page under a resource\]**: Associates the current page with a resource.
 
 Each command creates a corresponding property (e.g., `project::`, `area::`, or `resource::`) on the current page. This property allows you to link to an existing or new page. I recommend using the syntax `[[Renovation Project]]` to be able to click the link.
 
