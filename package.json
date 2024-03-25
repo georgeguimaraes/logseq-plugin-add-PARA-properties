@@ -38,6 +38,6 @@
     "typescript": "^5.4.2"
   },
   "dependencies": {
-    "vite": "^5.1.6"
+    "vite": "^5.2.6"
   }
 }
