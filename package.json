@@ -35,7 +35,7 @@
   "devDependencies": {
     "vite-plugin-logseq": "^1.1.2",
     "@logseq/libs": "^0.0.17",
-    "typescript": "^5.5.4"
+    "typescript": "^5.6.2"
   },
   "dependencies": {
     "vite": "^5.4.0"
